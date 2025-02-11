@@ -9,20 +9,35 @@
     "lint": "eslint --ext .js,.vue,.ts src",
     "lint:fix": "eslint --ext .js,.vue,.ts src --fix",
     "biome": "npx biome lint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npm run test:unit"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.ts": "eslint --fix",
+    "*.vue": "eslint --fix"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "npx commitlint --edit ${1}",
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npm run test"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.7.1",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
+    "commitlint": "^19.7.1",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-vue": "^9.32.0",
+    "lint-staged": "^15.4.3",
+    "simple-git-hooks": "^2.11.1",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vue-tsc": "^2.2.0"
