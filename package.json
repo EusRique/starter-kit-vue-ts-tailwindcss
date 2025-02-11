@@ -9,8 +9,7 @@
     "lint": "eslint --ext .js,.vue,.ts src",
     "lint:fix": "eslint --ext .js,.vue,.ts src --fix",
     "biome": "npx biome lint",
-    "preview": "vite preview",
-    "test": "npm run test:unit"
+    "preview": "vite preview"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
