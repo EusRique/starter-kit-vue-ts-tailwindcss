@@ -19,7 +19,7 @@
   },
   "eslint": {
     "enabled": true,
-    "configFile": ".eslintrc.js"
+    "configFile": ".eslintrc.json"
   },
   "linter": {
     "enabled": true,
